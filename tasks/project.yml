@@ -1,0 +1,17 @@
+---
+
+- name: Create directories
+  file: path={{ item }} state=directory
+  with_items:
+  - '{{ project_dir }}'
+  - '{{ project_src_dir }}'
+  - '{{ project_tmp_dir }}'
+
+- name: Setup Sublime Text project
+  template: src=sublime-project.j2 dest={{ project_dir }}/{{ project_name }}.sublime-project
+
+- name: Setup EditorConfig
+  template: src=editorconfig.j2 dest={{ project_dir }}/.editorconfig
+
+- include: teamocil.yml
+  tags: [project, teamocil]

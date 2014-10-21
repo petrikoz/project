@@ -1,0 +1,7 @@
+---
+
+- name: Setup Teamocil layout
+  template: src=teamocil.yml.j2 dest={{ project_dir }}/.teamocil.yml
+
+- name: Enable Teamocil layout
+  file: src={{ project_dir }}/.teamocil.yml dest={{ teamocil_dir }}/{{ teamocil_layout_name }}.yml state=link

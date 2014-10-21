@@ -1,0 +1,11 @@
+windows:
+  - name: '{{ teamocil_layout_name }}'
+    layout: main-vertical
+    panes:
+      - focus: true
+        commands:
+        - 'workon {{ venv_name }}'
+        - 'gcd'
+      - commands:
+        - 'workon {{ venv_name }}'
+        - 'cd ../tmp'

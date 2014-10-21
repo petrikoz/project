@@ -1,0 +1,40 @@
+{
+  "folders":
+  [
+    {"path": "{{ project_src_dir }}"}
+    ,{
+      "path": "."
+      ,"folder_exclude_patterns":["{{ project_src_dir }}"]
+    }
+  ]
+  ,"settings":
+  {
+    /****************************************************************
+      Anaconda
+      https://github.com/DamnWidget/anaconda
+    ****************************************************************/
+      // Per project python interpreter
+    "python_interpreter": "{{ venv_dir }}/bin/python"
+    ,"extra_paths":["{{ project_src_dir }}"]
+  }
+  /****************************************************************
+    SublimeLinter3
+    https://github.com/SublimeLinter/SublimeLinter3
+  ****************************************************************/
+  ,"SublimeLinter":
+  {
+    "linters":
+    {
+      // https://github.com/SublimeLinter/SublimeLinter-pylint
+      "pylint": {
+        "@disable": true,
+        "paths": ["{{ project_src_dir }}"]
+        ,"excludes": [
+          "*/tests/**"
+          ,"*/tmp/**"
+        ]
+        ,"show-codes": true
+      }
+    }
+  }
+}

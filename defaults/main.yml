@@ -1,0 +1,15 @@
+---
+project_enabled: true
+
+project_root_dir: '~/work'
+
+project_dir: '{{ project_root_dir }}/{{ project_name }}'
+project_src_dir: '{{ project_dir }}/src'
+project_tmp_dir: '{{ project_dir }}/tmp'
+
+teamocil_dir: '~/.teamocil'
+teamocil_layout_name: '{{ project_name }}'
+
+venv_root_dir: '{{ project_root_dir }}/.venv'
+venv_name: '{{ project_name }}'
+venv_dir: '{{ venv_root_dir }}/{{ venv_name }}'

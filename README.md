@@ -54,8 +54,11 @@ Example:
 - hosts: localhost
   roles:
     - project
+  vars:
+    project_dir: false
   vars_prompt:
-    - project_name: 'What is project name?'
+    project_name: 'What is project name?'
+    project_path: 'What is project path?'
 ```
 
 #### License

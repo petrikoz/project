@@ -1,5 +1,8 @@
 ---
 
+- set_fact: project_dir={{ project_root_dir }}/{{ project_path }}
+  when: project_path and not project_dir
+
 - name: Create directories
   file: path={{ item }} state=directory
   with_items:
